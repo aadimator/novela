@@ -1,20 +1,43 @@
-#logo-desktop{
-    .change-fill{
-        fill: var(--primary);
-    }
+// #logo-desktop{
+//     .change-fill{
+//         fill: var(--primary);
+//     }
+// }
+
+// #logo-mobile{
+//     path{
+//         fill: var(--primary);
+//     }
+// }
+
+// @media screen and (max-width: 735px){
+//     .Logo__Desktop {
+//         display: none;
+//     }
+//     .Logo__Mobile{
+//         display: block;
+//     }
+// }
+
+.logo {
+  flex-shrink: 0;
+  display: block;
+  padding: 10px;
+  color: var(--primary);
+  font-size: 2rem;
+  line-height: 1em;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: var(--sanserif);
+  opacity: 0.5;
+  -webkit-transition: opacity 0.3s ease;
+  -o-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
 }
 
-#logo-mobile{
-    path{
-        fill: var(--primary);
-    }
-}
-
-@media screen and (max-width: 735px){
-    .Logo__Desktop {
-        display: none;
-    }
-    .Logo__Mobile{
-        display: block;
-    }
+.logo:hover {
+  text-decoration: none;
+  color: var(--primary);
+  opacity: 1;
 }
