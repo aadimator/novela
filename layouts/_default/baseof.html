@@ -1,10 +1,11 @@
+<!-- prettier-ignore -->
 <html>
 
 {{ partial "head/head.html" . }}
 
 <body class="line-numbers">
 
-    {{ $script := resources.Get "js/initColors.js" }}
+    {{ $script := resources.Get "js/initColors.js" | minify | fingerprint }}
     <script src="{{ $script.RelPermalink }}"></script>
 
     <div class="layout-styled">
@@ -19,7 +20,7 @@
 
     </div>
 
-    {{ $script := resources.Get "js/prism.js" }}
+    {{ $script := resources.Get "js/prism.js" | minify | fingerprint }}
     <script src="{{ $script.RelPermalink }}"></script>
 </body>
 

@@ -37,7 +37,7 @@
 <!-- {{ $script := resources.Get "js/toggleLogos.js" }}
 <script src="{{ $script.RelPermalink }}"></script> -->
 
-{{ $script := resources.Get "js/toggleColors.js" }}
+{{ $script := resources.Get "js/toggleColors.js" | minify | fingerprint}}
 <script src="{{ $script.RelPermalink }}"></script>
 
 <!-- {{ $script := resources.Get "js/copyUrl.js" }}
