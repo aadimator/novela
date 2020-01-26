@@ -3,9 +3,10 @@
 .nav-controls a {
   display: block;
   margin: 0;
-  padding: 10px 12px;
+  padding: 1rem 1.2rem;
   color: var(--primary);
-  font-weight: 600;
+  font-weight: 700;
+  font-family: var(--sanserif);
   opacity: 0.4;
 }
 

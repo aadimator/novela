@@ -1,10 +1,11 @@
 {{ define "main" }}
 
+<!-- prettier-ignore -->
 <section class="section narrow">
 
     {{ partial "article/hero.html" . }}
 
-    {{ partial "article/progress" . }}
+    {{/*  {{ partial "article/progress" . }}  */}}
 
     <article  id="articleContent" class="post-content">
         {{ .Content }}
@@ -14,6 +15,6 @@
     {{ partial "article/next.html" . }}
 </section>
 
-{{ $script := resources.Get "js/progressBar.js" }}
- <script src="{{ $script.RelPermalink }}"></script>
-{{ end }}
+{{/* {{ $script := resources.Get "js/progressBar.js" }}
+<script src="{{ $script.RelPermalink }}"></script>
+*/}} {{ end }}
