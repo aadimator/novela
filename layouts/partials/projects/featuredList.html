@@ -42,7 +42,10 @@
         <p class="project_description">
             {{ $project.Params.description }}
 
-            <a href="{{ $project.RelPermalink }}" class="project_link" style="--project-accent: #{{ $project.Params.color }};">View Detail</a>
+            <a href="{{ $project.RelPermalink }}" class="project_link hvr-icon-wobble-horizontal" style="--project-accent: #{{ $project.Params.color }};">
+                View Detail 
+                <span class="project_link_icon" >{{ readFile "static/icons/arrow.svg" | safeHTML }} </sp>
+            </a>
         </p>
     </div>
 
