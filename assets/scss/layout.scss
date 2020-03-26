@@ -1,8 +1,11 @@
-.layout-styled{
-    position: relative;
-    background: var(--background-color);
-    -webkit-transition: var(--color-mode-transition);
-    -o-transition: var(--color-mode-transition);
-    transition: var(--color-mode-transition);
-    min-height: 100vh;
+.layout-styled {
+  position: relative;
+  background: var(--background-color);
+  -webkit-transition: var(--color-mode-transition);
+  -o-transition: var(--color-mode-transition);
+  transition: var(--color-mode-transition);
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 100%;
 }

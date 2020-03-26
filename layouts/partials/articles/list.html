@@ -36,7 +36,7 @@
         </div>
       </a>
       {{ $counter := mod (add $index 1) 2 }}
-      {{ $len := (where .Pages "Type" "post") }}
+      {{ $len := (where .Pages "Type" "writing") }}
       {{ if or (eq $counter 0) (eq (add $index 1) $len) }}
     </div>
     {{ $biggerPlaced = false }}

@@ -1,0 +1,92 @@
+.section.projects {
+  margin-top: 5rem;
+}
+
+.project_preview {
+  position: relative;
+  width: 100%;
+
+  &:not(:last-child) {
+    margin-bottom: 56px;
+  }
+
+  .project_title {
+    margin-bottom: 3rem;
+    font-family: var(--sanserif);
+  }
+
+  .project_content {
+    display: grid;
+    padding-bottom: 40px;
+    border-bottom: 2px solid var(--project-accent);
+    grid-gap: 0;
+  }
+
+  .project_subtitle {
+    margin: 0;
+    margin-bottom: 16px;
+    max-width: 456px;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 32px;
+    letter-spacing: 0.16px;
+  }
+
+  .project_description {
+    margin: 0;
+    margin-bottom: 16px;
+    max-width: 456px;
+    font-weight: 400;
+    letter-spacing: 0.04px;
+    font-size: 16px;
+    line-height: 24px;
+    display: block;
+  }
+
+  .project_link {
+    display: block;
+    margin-top: 24px;
+    line-height: 18px;
+    font-weight: 500;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+    color: var(--project-accent);
+    text-decoration: none;
+    transition: all 120ms ease-in-out;
+
+    &::hover {
+      margin-left: 1rem;
+    }
+
+    &::after {
+      content: "";
+      display: inline-block;
+      width: 20px;
+      height: 10px;
+      mask: url(https://d1qmdf3vop2l07.cloudfront.net/dear-deodorant.cloudvent.net/compressed/_min_/1960493c6b27e2ba34a00765867bb436.svg)
+        right center no-repeat;
+      -webkit-mask: url(https://d1qmdf3vop2l07.cloudfront.net/dear-deodorant.cloudvent.net/compressed/_min_/1960493c6b27e2ba34a00765867bb436.svg)
+        right center no-repeat;
+      margin-left: 4px;
+      background-color: var(--project-accent);
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .project_preview {
+    &:not(:last-child) {
+      margin-bottom: 120px;
+    }
+
+    .project_title {
+      margin-bottom: 4rem;
+    }
+
+    .project_content {
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 30px;
+      padding-bottom: 72px;
+    }
+  }
+}

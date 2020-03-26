@@ -1,0 +1,62 @@
+{{ define "styles" }}
+    {{ $swiper := resources.Get "css/swiper.css" | minify | fingerprint}}
+    <link rel="stylesheet" href="{{ $swiper.RelPermalink }}" />
+{{ end }}
+
+
+<section class="section projects">
+  <div id="projectsList" class="articles-list-container show-details">
+    {{ $posts := partialCached "func/GetFeaturedProjects" . "projects" }}
+    {{ range $index, $project := $posts }}
+
+    <article class="project_preview">
+
+    <a href="{{ $project.RelPermalink }}" class="article-link">
+        <h2 class="project_title" style="--accent: #{{ $project.Params.color }};">
+            {{ $project.Params.title }}
+        </h2>
+    </a>
+    
+      <!-- Slider main container -->
+    <div class="swiper-container">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+            {{ $image:= $project.Resources.Match "Project Image #**" }}
+            <!-- Slides -->
+            {{range $image}}
+                <div class="swiper-slide">
+                    <a href="{{ $project.RelPermalink }}" >
+                        <img class="project_image" src="{{ .RelPermalink }}" alt="">
+                    </a>
+                </div>
+            {{end}}
+        </div>
+
+        <div class="swiper-pagination" style="--project-accent: #{{ $project.Params.color }};"></div>
+    </div>
+
+    <div class="project_content" style="--project-accent: #{{ $project.Params.color }};">
+        <p class="project_subtitle">
+            {{ $project.Params.subtitle }}
+        </p>
+        <p class="project_description">
+            {{ $project.Params.description }}
+
+            <a href="{{ $project.RelPermalink }}" class="project_link" style="--project-accent: #{{ $project.Params.color }};">View Detail</a>
+        </p>
+    </div>
+
+    </article>
+    {{ end }}
+  </div>
+</section>
+
+{{ define "scripts" }}
+
+{{ $swiper := resources.Get "js/swiper.js" | minify | fingerprint }}
+<script src="{{ $swiper.RelPermalink }}"></script>
+
+{{ $script := resources.Get "js/init_swiper.js" | minify | fingerprint }}
+<script src="{{ $script.RelPermalink }}"></script>
+
+{{ end }}

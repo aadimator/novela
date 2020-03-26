@@ -1,5 +1,5 @@
 {{/*
-  GetArticles
+  GetProjects
   Retrieve article or posts
 
   @author @regisphilibert
@@ -15,7 +15,7 @@
     {{ $articles := partialCached "func/GetArticles" . "articles" }}
 */}}
 {{ $articles := slice }}
-{{ with where site.RegularPages "Type" "writing" }}
+{{ with where site.RegularPages "Type" "projects" }}
 {{ $articles = . }}
 {{ end }}
 {{ return $articles }}

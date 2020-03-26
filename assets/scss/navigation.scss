@@ -28,7 +28,7 @@
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding-bottom: 80px;
+  padding-bottom: 3rem;
   color: var(--grey);
 }
 
@@ -52,7 +52,7 @@
 
 .footer-hr {
   position: relative;
-  margin: 140px auto 50px;
+  margin: 50px auto 50px;
   border-bottom: 1px solid var(--horizontalRule);
 }
 
@@ -127,7 +127,7 @@
 .nav-container {
   position: relative;
   z-index: 100;
-  padding-top: 100px;
+  padding-top: 7rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -138,14 +138,14 @@
 
 @media screen and (max-height: 800px) {
   .nav-container {
-    padding-top: 50px;
+    padding-top: 5rem;
   }
 }
 
 /*DESKTOP MEDIUM*/
 @media screen and (max-width: 1280px) {
   .nav-container {
-    padding-top: 50px;
+    padding-top: 5rem;
   }
 }
 

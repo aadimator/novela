@@ -1,0 +1,11 @@
+<div class="grid-controls-container">
+    <button id="btnGrid" class="grid-button">
+        {{ partial "icons/ui/tiles.html" . }}
+    </button>
+    <button id="btnRows" class="grid-button">
+        {{ partial "icons/ui/rows.html" . }}
+    </button>
+</div>
+
+{{ $script := resources.Get "js/toggleLayout.js" | minify | fingerprint }}
+<script src="{{ $script.RelPermalink }}"></script>
