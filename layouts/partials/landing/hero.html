@@ -1,0 +1,22 @@
+<!-- prettier-ignore -->
+<Section class="section" relative id="Articles__Hero">
+    <div class="hero_container">
+        <div class="heading-container" >
+            <h1 class="hero-heading">Hi, my <br> name is <b>Aadam</b>.</h1>
+            <h2 class="hero-subheading">{{ .Page.Params.hero.subheading }}</h1>
+            <button class="ghost-btn">Get in touch
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <b aria-hidden="true">Get in touch</b>
+                <b aria-hidden="true">Get in touch</b>
+                <b aria-hidden="true">Get in touch</b>
+                <b aria-hidden="true">Get in touch</b>
+            </button>
+        </div>
+        <div class="hero_image">
+            {{ readFile "static/images/undraw_Firmware_jw6u.svg" | safeHTML }}
+        </div>
+    </div>
+</Section>

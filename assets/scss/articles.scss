@@ -1,4 +1,31 @@
 /****************************************HEADER****************************************/
+.subheading-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin: 5rem 0;
+
+  /*DESKTOP*/
+  @media screen and (max-width: $desktop) {
+    margin-bottom: 80px;
+  }
+
+  /*TABLET*/
+  @media screen and (max-width: $tablet) {
+    margin-bottom: 60px;
+  }
+
+  /*PHABLET*/
+  @media screen and (max-width: $phablet) {
+    display: none;
+  }
+}
 
 .grid-controls-container {
   display: -webkit-box;
