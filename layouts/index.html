@@ -1,6 +1,16 @@
+
+
 {{ define "main" }}
 
 {{ partial "articles/hero.html" . }}
 {{ partial "projects/featuredList.html" . }}
+{{ partial "certificates/list" .}}
 
+{{ end }}
+
+{{ define "scripts" }}
+    {{ $swiper := resources.Get "js/swiper.js" | minify | fingerprint }}
+    <script src="{{ $swiper.RelPermalink }}"></script>
+    {{ $script := resources.Get "js/init_swiper.js" | minify | fingerprint }}
+    <script src="{{ $script.RelPermalink }}"></script>
 {{ end }}

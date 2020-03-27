@@ -10,6 +10,7 @@
     {{ block "styles" . }}
 
     {{ end }}
+    
     {{ $style := resources.Get "scss/global.scss" | toCSS | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $style.RelPermalink }}">
 

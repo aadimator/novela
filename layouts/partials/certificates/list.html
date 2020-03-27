@@ -1,56 +1,49 @@
-<!-- prettier-ignore -->
-<section class="section nartrow">
-    <div id="articlesList" class="articles-list-container show-details">
-        {{ $posts := partialCached "func/GetCertificates" . "articles" }}
-        {{ $paginator := .Paginate $posts }}
-        {{ $biggerFirst := true }}
-        {{ $biggerPlaced := false }}
-        {{ range $index, $article := $paginator.Pages }}
-            {{ $counter := mod $index 2 }}
-            {{ if not $counter }}
-                <div class="post-row">
-            {{ end }}
-            <a href="{{ $article.RelPermalink }}" class="article-link" 
-            {{ if and (eq ($biggerFirst) true) (eq ($biggerPlaced) false) }}
-              {{ if eq $counter 0 }}
-                id="article-link-bigger"
-                {{ $biggerPlaced = true }}
-              {{ end }}
-            {{ else if and (not $biggerFirst) (not $biggerPlaced) }}
-              {{ if ne $counter 0 }}
-                id="article-link-bigger"
-                {{ $biggerPlaced = true }}
-              {{ end }}
-            {{ end }}>
-              <div class="article-data-outer">
-                <div class="image-container">
-                  <img src="{{ $article.Params.hero }}" class="article-image" /> 
-                </div>
-                <div class="article-data">
-                  <h2 class="article-title">
-                    {{ $article.Params.title }}
-                  </h2>
-                  <p class="article-excerpt">
-                    {{ $article.Params.excerpt }}
-                  </p>
-                  <div class="article-metadata">
-                    {{ $article.Date.Format "January 2, 2006" }}{{ if $article.Params.timetoread }} • {{ $article.Params.timetoread }} min read{{ end }}
-                  </div>
-                </div>
-              </div>
-            </a>
-            {{ $counter := mod (add $index 1) 2 }}
-            {{ $len := (where .Pages "Type" "certificates") }}
-            {{ if or (eq $counter 0) (eq (add $index 1) $len) }}
-                </div>
-                {{ $biggerPlaced = false }}
-                {{ if $biggerFirst }}
-                  {{ $biggerFirst = false }}
-                {{ else }}
-                  {{ $biggerFirst = true }}
+{{ define "styles" }}
+    {{ $swiper := resources.Get "css/swiper.css" | minify | fingerprint}}
+    <link rel="stylesheet" href="{{ $swiper.RelPermalink }}" />
+{{ end }}
+
+<section class="section projects">
+  <h2 class="section_title">Certificates</h2>
+  <!-- <p class="section_subtitle">Some of the certificates.</p> -->
+  <div id="projectsList" class="articles-list-container show-details">
+      <!-- Slider main container -->
+    <div id="cert-container" class="swiper-container swiper2">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+
+            {{ $posts := partialCached "func/GetCertificates" . "certificates" }}
+            {{ range $index, $project := $posts }}
+
+          <div class="swiper-slide">
+
+            <article class="cert_preview" style="--accent: #{{ $project.Params.color }};">
+
+              <h2 class="cert_title">
+                  {{ $project.Params.title }}
+              </h2>
+              {{ with $project.Resources.ByType "image" }}
+                {{ range . }}
+                  <img class="cert_image" src="{{ .RelPermalink }}" alt="{{ $.Title }}">
                 {{ end }}
-            {{ end }}
-        {{ end }}
+              {{ end }}
+              <div class="cert_content" style="--project-accent: #{{ $project.Params.color }};">
+                <p class="cert_subtitle">
+                    {{ $project.Params.subtitle }}
+                </p>
+                <p class="cert_description">
+                    {{ $project.Params.description }}
+                </p>
+              </div>
+            </article>
+          </div>
+          
+    {{ end }}
+        </div>
+
+        <div class="swiper2-pagination" ></div>
     </div>
-    {{ partial "paginator/paginator.html" . }}
+
+    
+  </div>
 </section>

@@ -3,22 +3,24 @@
     <link rel="stylesheet" href="{{ $swiper.RelPermalink }}" />
 {{ end }}
 
+<!-- <h2 class="section_title">Projects</h2> -->
 
 <section class="section projects">
+  <h2 class="section_title">Selected Projects</h2>
   <div id="projectsList" class="articles-list-container show-details">
     {{ $posts := partialCached "func/GetFeaturedProjects" . "projects" }}
     {{ range $index, $project := $posts }}
 
     <article class="project_preview">
 
-    <a href="{{ $project.RelPermalink }}" class="article-link">
+    <a href="{{ $project.RelPermalink }}" class="project-title-link">
         <h2 class="project_title" style="--accent: #{{ $project.Params.color }};">
             {{ $project.Params.title }}
         </h2>
     </a>
     
       <!-- Slider main container -->
-    <div class="swiper-container">
+    <div class="swiper-container swiper1">
         <!-- Additional required wrapper -->
         <div class="swiper-wrapper">
             {{ $image:= $project.Resources.Match "Project Image #**" }}
@@ -32,7 +34,7 @@
             {{end}}
         </div>
 
-        <div class="swiper-pagination" style="--project-accent: #{{ $project.Params.color }};"></div>
+        <div id="swiper-pagination" class="swiper-pagination swiper1-pagination" style="--project-accent: #{{ $project.Params.color }};"></div>
     </div>
 
     <div class="project_content" style="--project-accent: #{{ $project.Params.color }};">
@@ -53,13 +55,3 @@
     {{ end }}
   </div>
 </section>
-
-{{ define "scripts" }}
-
-{{ $swiper := resources.Get "js/swiper.js" | minify | fingerprint }}
-<script src="{{ $swiper.RelPermalink }}"></script>
-
-{{ $script := resources.Get "js/init_swiper.js" | minify | fingerprint }}
-<script src="{{ $script.RelPermalink }}"></script>
-
-{{ end }}
