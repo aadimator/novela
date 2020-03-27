@@ -90,7 +90,7 @@
   }
 }
 
-.project-title-link {
+.project_title_link {
   max-width: 39.5%;
   position: relative;
   display: block;
@@ -148,7 +148,7 @@
   @media screen and (max-width: $tablet) {
     min-width: 80% !important;
     display: block;
-    margin-bottom: 60px;
+    margin-bottom: 3rem;
 
     p {
       padding: 0;

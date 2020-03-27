@@ -13,20 +13,26 @@
   }
 }
 
+.work_container {
+  .heading-container {
+    padding-inline-start: 3rem;
+  }
+}
+
 .heading-container {
   margin: auto 0;
 
   .hero-heading {
     font-style: normal;
-    font-size: 3.8rem;
+    font-size: 6rem;
     font-family: var(--serif);
     font-weight: normal;
     line-height: 1;
     color: var(--primary);
     margin: 0;
 
-    @media screen and (min-width: $desktop) {
-      font-size: 6rem;
+    @media screen and (max-width: $desktop) {
+      font-size: 4rem;
     }
   }
 
@@ -37,6 +43,21 @@
     margin: 0;
     margin-top: 3rem;
     padding: 0;
+  }
+
+  .hero-description {
+    font-size: 1.8rem;
+    font-weight: normal;
+    line-height: 1.65;
+    max-width: 400px;
+    margin: 0;
+    margin-top: 3rem;
+    padding: 0;
+
+    @media only screen and (max-width: $tablet) {
+      margin: auto;
+      margin-top: 3rem;
+    }
   }
 
   @media only screen and (max-width: $tablet) {
@@ -55,7 +76,7 @@
     --boxShadowDepth: 0;
     --buttonColor: var(--accent);
     --fontColor: var(--background-color);
-    --fontSize: 3;
+    --fontSize: 2;
     --horizontalPadding: 16;
     --verticalPadding: 8;
     background: transparent;
@@ -150,6 +171,34 @@
   }
 }
 
+.work_image {
+  @media only screen and (max-width: $tablet) {
+    display: none;
+  }
+
+  svg {
+    .eyes {
+      fill: var(--accent);
+      opacity: 0.1;
+      animation-name: blink;
+      animation-duration: 3s;
+      animation-iteration-count: infinite;
+      animation-timing-function: ease-in-out;
+    }
+
+    .clouds {
+      animation-name: cloud;
+      animation-duration: 10s;
+      animation-iteration-count: infinite;
+      animation-timing-function: ease-in-out;
+    }
+
+    .moon {
+      fill: var(--accent);
+    }
+  }
+}
+
 .hero_image {
   margin: auto;
 
@@ -197,28 +246,40 @@
     margin-left: 5px;
     margin-top: 5px;
   }
+}
 
-  @keyframes floating {
-    from {
-      transform: translate(0px, 0px);
-    }
-    65% {
-      transform: translate(5px, 15px);
-    }
-    to {
-      transform: translate(-0px, -0px);
-    }
+@keyframes floating {
+  from {
+    transform: translate(0px, 0px);
   }
+  65% {
+    transform: translate(5px, 15px);
+  }
+  to {
+    transform: translate(-0px, -0px);
+  }
+}
 
-  @keyframes blink {
-    from {
-      opacity: 0.2;
-    }
-    65% {
-      opacity: 1;
-    }
-    to {
-      opacity: 0.2;
-    }
+@keyframes cloud {
+  from {
+    transform: translate(0px, -50px);
+  }
+  65% {
+    transform: translate(50px, -50px);
+  }
+  to {
+    transform: translate(-0px, -50px);
+  }
+}
+
+@keyframes blink {
+  from {
+    opacity: 0.2;
+  }
+  65% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.2;
   }
 }
