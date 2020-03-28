@@ -9,7 +9,7 @@
                 <div class="heading-container" >
                     <h1 class="section-heading">{{$section.title | safeHTML}}<span class="dot">.</span></h1>
                     <h2 class="section-description">{{ $section.description | safeHTML }}</h1>
-                    {{ if isset $section "button" }}
+                    {{ if $section.button }}
                     <a href="{{ $section.buttonLink }}"><button class="ghost-btn">{{ $section.button }}
                         <span></span>
                         <span></span>
