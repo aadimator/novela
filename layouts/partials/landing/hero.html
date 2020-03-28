@@ -2,21 +2,23 @@
 <Section class="section" relative id="Articles__Hero">
     <div class="hero_container">
         <div class="heading-container" >
-            <h1 class="hero-heading">Hi, my <br> name is <b>Aadam</b><span class="dot">.</span></h1>
-            <h2 class="hero-subheading">I'm an <b>independent software developer</b> specializing in machine learning.</h1>
-            <a href="mailto:aadimator@gmail.com?subject=🤘 Hi Aadam, I'd like to hire you"><button class="ghost-btn">Get in touch
+            <h1 class="hero-heading">{{ .heading | safeHTML }}<span class="dot">.</span></h1>
+            <h2 class="hero-subheading">{{ .subheading | safeHTML }}</h2>
+            {{ if isset . "button" }}
+            <a href="{{ .buttonLink }}"><button class="ghost-btn">{{ .button }}
                 <span></span>
                 <span></span>
                 <span></span>
                 <span></span>
-                <b aria-hidden="true">Get in touch</b>
-                <b aria-hidden="true">Get in touch</b>
-                <b aria-hidden="true">Get in touch</b>
-                <b aria-hidden="true">Get in touch</b>
+                <b aria-hidden="true">{{ .button }}</b>
+                <b aria-hidden="true">{{ .button }}</b>
+                <b aria-hidden="true">{{ .button }}</b>
+                <b aria-hidden="true">{{ .button }}</b>
             </button></a>
+            {{ end }}
         </div>
         <div class="hero_image">
-            {{ readFile "static/images/undraw_Firmware_jw6u.svg" | safeHTML }}
+            {{ readFile .image | safeHTML }}
         </div>
     </div>
 </Section>

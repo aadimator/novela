@@ -2,8 +2,8 @@
 
 {{ define "main" }}
 
-{{ partial "landing/hero.html" . }}
-{{ partial "landing/work.html" . }}
+{{ partial "landing/hero.html" .Params.hero }}
+{{ partial "landing/work.html" .Params.work }}
 {{ partial "projects/featuredList.html" . }}
 {{ partial "certificates/list" .}}
 

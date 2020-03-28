@@ -2,23 +2,23 @@
 <Section class="section" relative id="Articles__Hero">
     <div class="hero_container work_container">
         <div class="hero_image work_image">
-            {{ readFile "static/images/undraw_Artificial_intelligence_oyxx.svg" | safeHTML }}
+            {{ readFile .image | safeHTML }}
         </div>
         <div class="heading-container" >
-            <h1 class="hero-heading"><span><b>Let's work <br>together</b><span class="dot">.</span></span></h1>
-            <p class="hero-description">From interaction design to scaleable design systems, 
-            single-page apps to something more experimental with WebGL. I help awesome people to 
-            build ambitious yet accessible web projects - the wilder, the better.</p>
-            <a href="/work"><button class="ghost-btn">About my approach
+            <h1 class="hero-heading"><span><b>{{ .heading | safeHTML }}</b><span class="dot">.</span></span></h1>
+            <div class="hero-description">{{ .subheading | safeHTML }}</div>
+            {{ if isset . "button" }}
+            <a href="{{ .buttonLink }}"><button class="ghost-btn">{{ .button }}
                 <span></span>
                 <span></span>
                 <span></span>
                 <span></span>
-                <b aria-hidden="true">About my approach</b>
-                <b aria-hidden="true">About my approach</b>
-                <b aria-hidden="true">About my approach</b>
-                <b aria-hidden="true">About my approach</b>
+                <b aria-hidden="true">{{ .button }}</b>
+                <b aria-hidden="true">{{ .button }}</b>
+                <b aria-hidden="true">{{ .button }}</b>
+                <b aria-hidden="true">{{ .button }}</b>
             </button></a>
+            {{ end }}
         </div>
     </div>
 </Section>
