@@ -105,6 +105,9 @@
 }
 
 .work-container.reversed {
+  .section_image {
+    text-align: start;
+  }
   @media screen and (min-width: $desktop) {
     flex-direction: row-reverse;
   }
