@@ -1,0 +1,18 @@
+<header class="section work-section">
+        <div class="heading-container" >
+            <h1 class="hero-heading">{{.title | safeHTML}}<span class="dot">.</span></h1>
+            <p class="hero-subheading">{{ .description | safeHTML }}</p>
+            {{ if isset . "button" }}
+            <a href="{{ .buttonLink }}"><button class="ghost-btn">{{ .button }}
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <b aria-hidden="true">{{ .button }}</b>
+                <b aria-hidden="true">{{ .button }}</b>
+                <b aria-hidden="true">{{ .button }}</b>
+                <b aria-hidden="true">{{ .button }}</b>
+            </button></a>
+            {{ end }}
+        </div>
+</header>

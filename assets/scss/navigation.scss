@@ -1,18 +1,26 @@
 /************************ Primary Navigation ************************/
 
-.nav-controls a {
-  display: block;
-  margin: 0;
-  padding: 1rem 1.2rem;
-  color: var(--primary);
-  font-weight: 700;
-  font-family: var(--sanserif);
-  opacity: 0.4;
-}
+.nav-controls {
+  a {
+    display: block;
+    margin: 0;
+    padding: 1rem 1.2rem;
+    color: var(--primary);
+    font-weight: 700;
+    font-family: var(--sanserif);
+    opacity: 0.4;
 
-.nav-controls a:hover {
-  text-decoration: none;
-  opacity: 1;
+    &:hover {
+      text-decoration: none;
+      opacity: 0.9;
+    }
+  }
+
+  .menu_now {
+    @media screen and (max-width: $phablet) {
+      display: none;
+    }
+  }
 }
 
 /************************FOOTER************************/
@@ -37,9 +45,9 @@
   .footer-container {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    padding-bottom: 100px;
+    -ms-flex-direction: column-reverse;
+    flex-direction: column-reverse;
+    padding-bottom: 4rem;
   }
 }
 
@@ -62,17 +70,7 @@
     margin: 60px auto;
   }
   .footer-text {
-    margin-bottom: 80px;
-  }
-}
-
-/*PHABLET*/
-@media screen and (max-width: 540px) {
-  .footer-hr {
-    display: none;
-  }
-  .footer-text {
-    margin: 120px auto 100px;
+    margin-top: 4rem;
   }
 }
 

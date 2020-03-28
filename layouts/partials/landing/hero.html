@@ -2,9 +2,9 @@
 <Section class="section" relative id="Articles__Hero">
     <div class="hero_container">
         <div class="heading-container" >
-            <h1 class="hero-heading">Hi, my <br> name is <b>Aadam</b>.</h1>
-            <h2 class="hero-subheading">{{ .Page.Params.hero.subheading }}</h1>
-            <button class="ghost-btn">Get in touch
+            <h1 class="hero-heading">Hi, my <br> name is <b>Aadam</b><span class="dot">.</span></h1>
+            <h2 class="hero-subheading">I'm an <b>independent software developer</b> specializing in machine learning.</h1>
+            <a href="mailto:aadimator@gmail.com?subject=🤘 Hi Aadam, I'd like to hire you"><button class="ghost-btn">Get in touch
                 <span></span>
                 <span></span>
                 <span></span>
@@ -13,7 +13,7 @@
                 <b aria-hidden="true">Get in touch</b>
                 <b aria-hidden="true">Get in touch</b>
                 <b aria-hidden="true">Get in touch</b>
-            </button>
+            </button></a>
         </div>
         <div class="hero_image">
             {{ readFile "static/images/undraw_Firmware_jw6u.svg" | safeHTML }}

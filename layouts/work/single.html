@@ -1,0 +1,40 @@
+{{ define "main" }}
+
+{{ range $index, $section := .Params.sections }}
+    {{ if (eq $index 0) }}
+        {{ partial "work/hero.html" . }}
+    {{ else}}
+        <section class="section work-section" relative id="Articles__Hero">
+            <div class="work-container {{ if (modBool $index 2) }} reversed {{end}}">
+                <div class="heading-container" >
+                    <h1 class="section-heading">{{$section.title | safeHTML}}<span class="dot">.</span></h1>
+                    <h2 class="section-description">{{ $section.description | safeHTML }}</h1>
+                    {{ if isset $section "button" }}
+                    <a href="{{ $section.buttonLink }}"><button class="ghost-btn">{{ $section.button }}
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <b aria-hidden="true">{{ $section.button }}</b>
+                        <b aria-hidden="true">{{ $section.button }}</b>
+                        <b aria-hidden="true">{{ $section.button }}</b>
+                        <b aria-hidden="true">{{ $section.button }}</b>
+                    </button></a>
+                    {{ end }}
+                </div>
+                <div class="section_image">
+                    {{ readFile $section.image | safeHTML }}
+                </div>
+            </div>
+        </section>
+    {{ end }}
+{{ end }}
+
+{{ end }}
+
+{{ define "scripts" }}
+    {{ $swiper := resources.Get "js/swiper.js" | minify | fingerprint }}
+    <script src="{{ $swiper.RelPermalink }}"></script>
+    {{ $script := resources.Get "js/init_swiper.js" | minify | fingerprint }}
+    <script src="{{ $script.RelPermalink }}"></script>
+{{ end }}

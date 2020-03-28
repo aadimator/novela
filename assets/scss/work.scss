@@ -1,0 +1,111 @@
+.work-section {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  margin-bottom: 5vh;
+
+  .hero-heading {
+    position: relative;
+    font-family: var(--serif);
+    line-height: 1.125;
+    color: var(--primary);
+    font-weight: bold;
+    text-align: start;
+
+    @media only screen and (min-width: $phablet) {
+      font-size: 6rem;
+    }
+
+    @media only screen and (min-width: $desktop) {
+      font-size: 7.5rem;
+    }
+  }
+
+  .hero-subheading {
+    max-width: 900px;
+    line-height: 1.65;
+    font-size: 1.8rem;
+    font-family: var(--serif);
+    text-align: start;
+
+    @media only screen and (min-width: $phablet) {
+      font-size: 2rem;
+    }
+
+    @media only screen and (min-width: $desktop) {
+      font-size: 2.4rem;
+    }
+  }
+
+  .work-container {
+    margin: 3rem auto;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+
+    @media screen and (min-width: $desktop) {
+      margin: 5rem auto;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .heading-container {
+      position: relative;
+      width: fit-content;
+      min-height: 25vh;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 580px;
+
+      .section-heading {
+        font-size: 3.8rem;
+        width: fit-content;
+        margin-left: 0;
+        margin-right: 0;
+        text-align: start;
+      }
+
+      .section-description {
+        font-size: 1.8rem;
+        font-weight: normal;
+        line-height: 1.65;
+
+        p {
+          margin-left: 0;
+          margin-right: 0;
+          padding: 0;
+          text-align: start;
+        }
+      }
+
+      @media screen and (min-width: $desktop) {
+        width: 45%;
+      }
+    }
+
+    .section_image {
+      width: 85%;
+      margin: 0 auto;
+      margin-bottom: 5rem;
+      position: relative;
+      text-align: end;
+
+      @media screen and (min-width: $desktop) {
+        width: 45%;
+      }
+
+      svg {
+        max-width: 90%;
+        height: auto;
+      }
+    }
+  }
+}
+
+.work-container.reversed {
+  @media screen and (min-width: $desktop) {
+    flex-direction: row-reverse;
+  }
+}
