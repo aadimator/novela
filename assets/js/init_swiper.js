@@ -3,6 +3,10 @@ var mySwiper = new Swiper(".swiper1", {
   centeredSlides: false,
   grabCursor: true,
   spaceBetween: 20,
+  preloadImages: false,
+  lazy: {
+    loadPrevNext: true
+  },
   // If we need pagination
   pagination: {
     el: ".swiper1-pagination",
@@ -15,6 +19,10 @@ var certSwiper = new Swiper(".swiper2", {
   centeredSlides: true,
   grabCursor: true,
   spaceBetween: 30,
+  preloadImages: false,
+  lazy: {
+    loadPrevNext: true
+  },
   // If we need pagination
   pagination: {
     el: ".swiper2-pagination",

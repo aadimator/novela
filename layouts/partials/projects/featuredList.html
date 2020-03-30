@@ -27,9 +27,10 @@
             <!-- Slides -->
             {{range $image}}
                 <div class="swiper-slide">
-                    <a href="{{ $project.RelPermalink }}" >
-                        <img class="project_image" src="{{ .RelPermalink }}" alt="">
-                    </a>
+                    <!-- <a href="{{ $project.RelPermalink }}" > -->
+                        <img data-src="{{ .RelPermalink }}" alt="{{ $project.Title }}" class="swiper-lazy project_image">
+                        <div class="swiper-lazy-preloader"></div>
+                    <!-- </a> -->
                 </div>
             {{end}}
         </div>
